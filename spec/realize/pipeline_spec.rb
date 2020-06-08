@@ -14,7 +14,7 @@ RSpec.describe Realize::Pipeline do
   let(:transformers) do
     [
       {
-        type: 'value/resolve',
+        type: 'r/value/resolve',
         key: :name
       }
     ]

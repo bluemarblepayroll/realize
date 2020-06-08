@@ -1,21 +1,19 @@
 # frozen_string_literal: true
 
 require_relative 'collection/sort'
-
 require_relative 'filter/by_key_record_value'
 require_relative 'filter/by_key_value'
 require_relative 'filter/by_key_value_presence'
 require_relative 'filter/inactive'
-
 require_relative 'format/date'
 require_relative 'format/remove_whitespace'
 require_relative 'format/string_replace'
-
 require_relative 'logical/switch'
-
 require_relative 'value/blank'
 require_relative 'value/map'
+require_relative 'value/null'
 require_relative 'value/resolve'
+require_relative 'value/static'
 require_relative 'value/verbatim'
 
 module Realize
@@ -26,25 +24,21 @@ module Realize
   class Transformers
     acts_as_hashable_factory
 
-    # Default
-    register '',                             Value::Verbatim
-
-    register 'collection/sort',              Collection::Sort
-
-    register 'filter/by_key_record_value',   Filter::ByKeyRecordValue
-    register 'filter/by_key_value',          Filter::ByKeyValue
-    register 'filter/by_key_value_presence', Filter::ByKeyValuePresence
-    register 'filter/inactive',              Filter::Inactive
-
-    register 'format/date',                  Format::Date
-    register 'format/remove_whitespace',     Format::RemoveWhitespace
-    register 'format/string_replace',        Format::StringReplace
-
-    register 'logical/switch',               Logical::Switch
-
-    register 'value/blank',                  Value::Blank
-    register 'value/map',                    Value::Map
-    register 'value/resolve',                Value::Resolve
-    register 'value/verbatim',               Value::Verbatim
+    register '',                               Value::Verbatim
+    register 'r/collection/sort',              Collection::Sort
+    register 'r/filter/by_key_record_value',   Filter::ByKeyRecordValue
+    register 'r/filter/by_key_value',          Filter::ByKeyValue
+    register 'r/filter/by_key_value_presence', Filter::ByKeyValuePresence
+    register 'r/filter/inactive',              Filter::Inactive
+    register 'r/format/date',                  Format::Date
+    register 'r/format/remove_whitespace',     Format::RemoveWhitespace
+    register 'r/format/string_replace',        Format::StringReplace
+    register 'r/logical/switch',               Logical::Switch
+    register 'r/value/blank',                  Value::Blank
+    register 'r/value/map',                    Value::Map
+    register 'r/value/null',                   Value::Null
+    register 'r/value/resolve',                Value::Resolve
+    register 'r/value/static',                 Value::Static
+    register 'r/value/verbatim',               Value::Verbatim
   end
 end

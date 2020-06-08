@@ -40,7 +40,7 @@ RSpec.describe Realize::Logical::Switch do
           values: %w[sheep],
           transformers: [
             {
-              type: 'value/resolve',
+              type: 'r/value/resolve',
               key: 'sheep_stuff.fur'
             }
           ]
@@ -48,14 +48,14 @@ RSpec.describe Realize::Logical::Switch do
         {
           values: 'dog',
           transformers: {
-            type: 'value/resolve',
+            type: 'r/value/resolve',
             key: 'dog_stuff.fur'
           }
         }
       ],
       default_transformers: [
         {
-          type: 'value/resolve',
+          type: 'r/value/resolve',
           key: :looks_like
         }
       ],

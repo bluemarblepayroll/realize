@@ -7,7 +7,7 @@ RSpec.describe Realize do
 
   let(:transformers) do
     Realize::Transformers.array(
-      type: 'value/resolve',
+      type: 'r/value/resolve',
       key: :name
     )
   end
