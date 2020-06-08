@@ -24,7 +24,7 @@ RSpec.describe Realize::Pipeline do
 
   describe '#transform' do
     it 'executes transformers and returns last value' do
-      actual = subject.transform(record, time)
+      actual = subject.transform(record, time: time)
 
       expect(actual).to eq('Frank Rizzo')
     end

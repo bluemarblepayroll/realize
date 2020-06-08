@@ -15,8 +15,11 @@ module Realize
       freeze
     end
 
-    def transform(record, time)
-      transformers.inject(record) do |memo, transformer|
+    def transform(record, opts = {})
+      time  = opts.fetch(:time, Time.now.utc)
+      value = opts.fetch(:value, record)
+
+      transformers.inject(value) do |memo, transformer|
         transformer.transform(resolver, memo, time, record)
       end
     end
