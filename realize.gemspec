@@ -5,17 +5,17 @@ require './lib/realize/version'
 Gem::Specification.new do |s|
   s.name        = 'realize'
   s.version     = Realize::VERSION
-  s.summary     = 'TBD'
+  s.summary     = 'Configurable Data Transformation Pipeline'
 
   s.description = <<-DESCRIPTION
-    TBD
+    Derive and transform a value using a configuration-first pipeline.
   DESCRIPTION
 
   s.authors     = ['Matthew Ruggio']
   s.email       = ['mruggio@bluemarblepayroll.com']
   s.files       = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   s.bindir      = 'exe'
-  s.executables = %w[realize]
+  s.executables = []
   s.homepage    = 'https://github.com/bluemarblepayroll/realize'
   s.license     = 'MIT'
   s.metadata    = {
