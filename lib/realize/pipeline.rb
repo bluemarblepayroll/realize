@@ -6,7 +6,7 @@ module Realize
   class Pipeline
     attr_reader :resolver, :transformers
 
-    def initialize(resolver: Objectable.resolver, transformers: [])
+    def initialize(transformers = [], resolver: Objectable.resolver)
       raise ArgumentError, 'resolver is required' unless resolver
 
       @resolver     = resolver
@@ -15,11 +15,8 @@ module Realize
       freeze
     end
 
-    def transform(record, opts = {})
-      time  = opts.fetch(:time, Time.now.utc)
-      value = opts.fetch(:value, record)
-
-      transformers.inject(value) do |memo, transformer|
+    def transform(record, time = Time.now.utc)
+      transformers.inject(record) do |memo, transformer|
         transformer.transform(resolver, memo, time, record)
       end
     end

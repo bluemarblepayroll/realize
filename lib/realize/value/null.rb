@@ -6,8 +6,6 @@ module Realize
     class Null
       acts_as_hashable
 
-      def initialize(_opts = {}); end
-
       def transform(_resolver, _value, _time, _record)
         nil
       end

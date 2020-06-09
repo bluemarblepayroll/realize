@@ -28,10 +28,10 @@ module Realize
         freeze
       end
 
-      def transform(_resolver, value, _time, _record)
+      def transform(resolver, value, _time, _record)
         records = array(value)
 
-        sorted = records.sort_by { |hsh| hsh[key.to_sym] }
+        sorted = records.sort_by { |hsh| resolver.get(hsh, key) }
 
         order == DESCENDING ? sorted.reverse : sorted
       end

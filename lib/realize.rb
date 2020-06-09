@@ -18,11 +18,8 @@ require_relative 'realize/pipeline'
 # Top-level syntactic sugar.
 module Realize
   class << self
-    def pipeline(resolver: Objectable.resolver, transformers: [])
-      Pipeline.new(
-        resolver: resolver,
-        transformers: transformers
-      )
+    def pipeline(transformers = [], resolver: Objectable.resolver)
+      Pipeline.new(transformers, resolver: resolver)
     end
   end
 end

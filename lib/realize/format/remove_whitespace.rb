@@ -7,8 +7,6 @@ module Realize
     class RemoveWhitespace
       acts_as_hashable
 
-      def initialize(_opts = {}); end
-
       def transform(_resolver, value, _time, _record)
         value.to_s.gsub(/\s+/, ' ')
       end
