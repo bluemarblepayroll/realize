@@ -9,8 +9,7 @@ RSpec.describe Realize::Value::Blank do
 
   describe 'acts_as_hashable' do
     specify '#make hydrates without keys' do
-      expect { described_class.make({}) }.not_to raise_error(ActsAsHashable::Hashable::HydrationError)
-      expect { described_class.make({}) }.not_to raise_error(ArgumentError)
+      expect { described_class.make({}) }.not_to raise_error
     end
   end
 
