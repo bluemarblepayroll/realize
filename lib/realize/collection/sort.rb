@@ -1,16 +1,12 @@
 # frozen_string_literal: true
 
+require_relative 'sort/direction'
+
 module Realize
   class Collection
-    # Transformer to take an array of oibjects and sort by the given key
+    # Transformer to take an array of objects and sort by the given key
     # and by the given sort direction. Defaulting to ascending.
     class Sort
-      module Direction
-        ASCENDING = 'ASC'
-        ASC = 'ASC'
-        DESCENDING = 'DESC'
-        DESC = 'DESC'
-      end
       include Arrays
       include Direction
       acts_as_hashable
