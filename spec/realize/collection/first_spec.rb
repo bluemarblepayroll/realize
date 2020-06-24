@@ -36,8 +36,8 @@ RSpec.describe Realize::Collection::First do
         expect(subject.transform(resolver, value, nil, nil)).to eq(first_object)
       end
       it 'when value is not an array' do
-        expect(subject.transform(resolver, { "id": 12, "date": '2020-01-01' }, nil, nil))
-          .to eq("id": 12, "date": '2020-01-01')
+        expect(subject.transform(resolver, first_object, nil, nil))
+          .to eq(first_object)
       end
       it 'returns nil for an empty array' do
         expect(subject.transform(resolver, [], nil, nil)).to eq(nil)

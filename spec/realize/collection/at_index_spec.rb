@@ -36,8 +36,8 @@ RSpec.describe Realize::Collection::AtIndex do
       end
       it 'when value is not an array' do
         transformer = described_class.new(index: 0)
-        expect(transformer.transform(resolver, { "id": 12, "date": '2020-01-01' }, nil, nil))
-          .to eq("id": 12, "date": '2020-01-01')
+        expect(transformer.transform(resolver, first_object, nil, nil))
+          .to eq(first_object)
       end
       it 'returns nil for an empty array' do
         transformer = described_class.new(index: 0)
@@ -63,11 +63,7 @@ RSpec.describe Realize::Collection::AtIndex do
 
     context 'exceptions' do
       it 'throws exception for nil index' do
-        expect { described_class.new(index: nil) }.to raise_error('integer index is required')
-      end
-
-      it 'thows an exception for bad index' do
-        expect { described_class.new(index: 'bananas') }.to raise_error('integer index is required')
+        expect { described_class.new(index: nil) }.to raise_error('index is required')
       end
     end
   end

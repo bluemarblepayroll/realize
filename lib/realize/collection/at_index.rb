@@ -9,20 +9,14 @@ module Realize
       attr_reader :index
 
       def initialize(index:)
-        raise ArgumentError, 'integer index is required' unless index.is_a?(Integer)
+        raise ArgumentError, 'index is required' if index.to_s.empty?
 
-        @index = index
+        @index = index.to_i
 
         freeze
       end
 
       def transform(_resolver, value, _time, _record)
-        at_index(value, index)
-      end
-
-      private
-
-      def at_index(value, index)
         value.is_a?(Array) ? value[index] : value
       end
     end
