@@ -6,8 +6,9 @@ module Realize
     # By default nils will return false unless nullable: true is passed in.
     # This transformer is very liberal in its parsing and will return true for:
     #   true, 'true', 't', 'TRUE', 'True', 1, '1', 'Y', 'yes', 'Yes', 'YES'
-    # All over non-truthy values will evaluate to false, such as:
-    #   false: false, 'false', 'f', 'FALSE', 'False', 0, '0', 'N', 'no', 'No', 'NO', {}, [], ''
+    # All other non-truthy values will evaluate to false, such as:
+    #   false, 'false', 'f', 'FALSE', 'False', 0, '0', 'N', 'no', 'No', 'NO', {}, [], '',
+    #   'abc', 123, :abc, etc...
     class Boolean
       acts_as_hashable
 
