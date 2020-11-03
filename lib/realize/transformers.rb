@@ -13,6 +13,7 @@ require_relative 'filter/inactive'
 require_relative 'format/date'
 require_relative 'format/remove_whitespace'
 require_relative 'format/string_replace'
+require_relative 'format/substring'
 
 require_relative 'logical/switch'
 
@@ -49,6 +50,7 @@ module Realize
     register 'r/format/date',                  Format::Date
     register 'r/format/remove_whitespace',     Format::RemoveWhitespace
     register 'r/format/string_replace',        Format::StringReplace
+    register 'r/format/substring',             Format::Substring
 
     register 'r/logical/switch',               Logical::Switch
 
