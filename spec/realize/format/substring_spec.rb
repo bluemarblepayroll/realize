@@ -82,4 +82,40 @@ RSpec.describe Realize::Format::Substring do
       end
     end
   end
+
+  context 'README examples' do
+    describe 'hellofield' do
+      let(:string)      { 'hellofriend' }
+      let(:start_index) { 0 }
+      let(:end_index)   { 5 }
+
+      specify 'exclusive is true' do
+        exclusive = true
+
+        subject = described_class.new(
+          end_index: end_index,
+          exclusive: exclusive,
+          start_index: start_index
+        )
+
+        actual = subject.transform(resolver, string, time, nil)
+
+        expect(actual).to eq('hello')
+      end
+
+      specify 'exclusive is false' do
+        exclusive = false
+
+        subject = described_class.new(
+          end_index: end_index,
+          exclusive: exclusive,
+          start_index: start_index
+        )
+
+        actual = subject.transform(resolver, string, time, nil)
+
+        expect(actual).to eq('hellof')
+      end
+    end
+  end
 end

@@ -11,9 +11,11 @@ module Realize
     class StringTemplate
       acts_as_hashable
 
+      DEFAULT_SEPARATOR = '.'
+
       attr_reader :expression, :resolver, :use_record
 
-      def initialize(expression: '', separator: '', use_record: false)
+      def initialize(expression: '', separator: DEFAULT_SEPARATOR, use_record: false)
         @expression = expression.to_s
         @resolver   = Objectable.resolver(separator: separator)
         @use_record = use_record || false
