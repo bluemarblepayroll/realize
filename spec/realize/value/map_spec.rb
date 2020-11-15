@@ -17,7 +17,7 @@ RSpec.describe Realize::Value::Map do
     {
       '1' => 'STRING1',
       1 => 'NUMBER1',
-      :'1' => 'SYMBOL1',
+      a1: 'SYMBOL1',
       nil => 'NIL',
       'aaa' => 'LOWERCASE',
       'AAA' => 'UPPERCASE'
@@ -66,7 +66,7 @@ RSpec.describe Realize::Value::Map do
       end
 
       it 'matches Symbol key' do
-        value     = :'1'
+        value     = :a1
         expected  = 'SYMBOL1'
 
         expect(subject.transform(resolver, value, time, values)).to eq(expected)
