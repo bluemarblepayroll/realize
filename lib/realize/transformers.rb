@@ -19,7 +19,9 @@ require_relative 'format/substring'
 require_relative 'logical/switch'
 
 require_relative 'type/boolean'
+require_relative 'type/lowercase_string'
 require_relative 'type/string'
+require_relative 'type/uppercase_string'
 
 require_relative 'value/blank'
 require_relative 'value/map'
@@ -57,7 +59,9 @@ module Realize
     register 'r/logical/switch',               Logical::Switch
 
     register 'r/type/boolean',                 Type::Boolean
+    register 'r/type/lowercase_string',        Type::LowercaseString
     register 'r/type/string',                  Type::String
+    register 'r/type/uppercase_string',        Type::UppercaseString
 
     register 'r/value/blank',                  Value::Blank
     register 'r/value/map',                    Value::Map

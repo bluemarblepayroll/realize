@@ -89,7 +89,9 @@ Here is a list of each built-in transformer, their options, and what their funct
 #### Type Transformers
 
 * **r/type/boolean** [nullable]: Returns `true` if the input is 'truthy', `false` if not.  By default nullable is false, which means a nil input will return false.  Changing this to true will return nil if nil is passed in.  A 'truthy' value is defined as matching: true, t, yes, y, or 1 (case-insensitive).
-* **r/type/string** []: Calls `#to_s` on the value so the returned value is guaranteed to be a string type.
+* **r/type/lowercase_string** [nullable]: Calls `#to_s.downcase` on the value so the returned value is guaranteed to be a string type.
+* **r/type/string** [nullable]: Calls `#to_s` on the value so the returned value is guaranteed to be a string type.
+* **r/type/uppercase_string** [nullable]: Calls `#to_s.upcase` on the value so the returned value is guaranteed to be a string type.
 
 #### Value-oriented Transformers
 

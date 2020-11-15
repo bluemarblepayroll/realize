@@ -1,3 +1,10 @@
+# 1.4.0 (TBD)
+
+New Transformers:
+
+* r/type/lowercase_string
+* r/type/uppercase_string
+
 # 1.3.0 (November 4th, 2020)
 
 New Transformers:
