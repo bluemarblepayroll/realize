@@ -7,16 +7,18 @@
 # LICENSE file in the root directory of this source tree.
 #
 
-require_relative 'base'
-
 module Realize
   class Type
-    # Call #to_s.downcase on the value and return result.
-    class UppercaseString < Base
-      def transform(_resolver, value, _time, _record)
-        return nil if nullable && value.nil?
+    # Common code for all Type Transformer subclasses.
+    class Base
+      acts_as_hashable
 
-        value.to_s.upcase
+      attr_reader :nullable
+
+      def initialize(nullable: false)
+        @nullable = nullable || false
+
+        freeze
       end
     end
   end

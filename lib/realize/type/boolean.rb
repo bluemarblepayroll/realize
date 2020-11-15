@@ -7,6 +7,8 @@
 # LICENSE file in the root directory of this source tree.
 #
 
+require_relative 'base'
+
 module Realize
   class Type
     # Convert input into either true, false, or nil.
@@ -16,15 +18,7 @@ module Realize
     # All other non-truthy values will evaluate to false, such as:
     #   false, 'false', 'f', 'FALSE', 'False', 0, '0', 'N', 'no', 'No', 'NO', {}, [], '',
     #   'abc', 123, :abc, etc...
-    class Boolean
-      acts_as_hashable
-
-      attr_reader :nullable
-
-      def initialize(nullable: false)
-        @nullable = nullable || false
-      end
-
+    class Boolean < Base
       def transform(_resolver, value, _time, _record)
         if nullable && value.nil?
           nil
