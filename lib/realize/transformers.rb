@@ -18,17 +18,17 @@ require_relative 'filter/by_key_value_presence'
 require_relative 'filter/inactive'
 
 require_relative 'format/date'
+require_relative 'format/lowercase'
 require_relative 'format/remove_whitespace'
 require_relative 'format/string_replace'
 require_relative 'format/string_template'
 require_relative 'format/substring'
+require_relative 'format/uppercase'
 
 require_relative 'logical/switch'
 
 require_relative 'type/boolean'
-require_relative 'type/lowercase_string'
 require_relative 'type/string'
-require_relative 'type/uppercase_string'
 
 require_relative 'value/blank'
 require_relative 'value/map'
@@ -58,17 +58,17 @@ module Realize
     register 'r/filter/inactive',              Filter::Inactive
 
     register 'r/format/date',                  Format::Date
+    register 'r/format/lowercase',             Format::Lowercase
     register 'r/format/remove_whitespace',     Format::RemoveWhitespace
     register 'r/format/string_replace',        Format::StringReplace
     register 'r/format/string_template',       Format::StringTemplate
     register 'r/format/substring',             Format::Substring
+    register 'r/format/uppercase',             Format::Uppercase
 
     register 'r/logical/switch',               Logical::Switch
 
     register 'r/type/boolean',                 Type::Boolean
-    register 'r/type/lowercase_string',        Type::LowercaseString
     register 'r/type/string',                  Type::String
-    register 'r/type/uppercase_string',        Type::UppercaseString
 
     register 'r/value/blank',                  Value::Blank
     register 'r/value/map',                    Value::Map

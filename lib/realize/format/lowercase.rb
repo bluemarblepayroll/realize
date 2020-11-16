@@ -7,15 +7,13 @@
 # LICENSE file in the root directory of this source tree.
 #
 
-require_relative 'base'
-
 module Realize
-  class Type
+  class Format
     # Call #to_s.downcase on the value and return result.
-    class LowercaseString < Base
-      def transform(_resolver, value, _time, _record)
-        return nil if nullable && value.nil?
+    class Lowercase
+      acts_as_hashable
 
+      def transform(_resolver, value, _time, _record)
         value.to_s.downcase
       end
     end
