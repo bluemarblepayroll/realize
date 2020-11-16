@@ -11,7 +11,7 @@ require_relative 'base'
 
 module Realize
   class Type
-    # Call #to_s.upcase on the value and return result.
+    # Call #to_s on the value and return result.
     class String < Base
       def transform(_resolver, value, _time, _record)
         return nil if nullable && value.nil?
