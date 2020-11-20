@@ -78,6 +78,7 @@ Here is a list of each built-in transformer, their options, and what their funct
 
 * **r/format/date** [input_format, output_format]: Parses the incoming value into a Time object using the configured input_format and outputs it as formatted by the configured output_format.
 * **r/format/lowercase** []: Calls `#to_s.downcase` on the value so the returned value is guaranteed to be a lower-cased string.
+* **r/format/pad** [length, side, with]: Pad a string value with a specified 'with' value (defaults to blank space) up until the passed in length is reached.  The 'side' option can be used to specify whether the padding should occur to the left or right side of the value.
 * **r/format/remove_whitespace** []: Removes all whitespace from the incoming value.
 * **r/format/sha256** [encoding_format]: Convert the value into a SHA256 encoded string.  The encoding_format will be hex by default but can also be configured to use base64.
 * **r/format/split** [by]: Take a string value and split it on the specified 'by' value.  By default, it will be split on a blank space.
