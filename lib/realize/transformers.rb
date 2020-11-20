@@ -20,6 +20,7 @@ require_relative 'filter/inactive'
 require_relative 'format/date'
 require_relative 'format/lowercase'
 require_relative 'format/remove_whitespace'
+require_relative 'format/sha256'
 require_relative 'format/string_replace'
 require_relative 'format/string_template'
 require_relative 'format/substring'
@@ -60,6 +61,7 @@ module Realize
     register 'r/format/date',                  Format::Date
     register 'r/format/lowercase',             Format::Lowercase
     register 'r/format/remove_whitespace',     Format::RemoveWhitespace
+    register 'r/format/sha256',                Format::Sha256
     register 'r/format/string_replace',        Format::StringReplace
     register 'r/format/string_template',       Format::StringTemplate
     register 'r/format/substring',             Format::Substring

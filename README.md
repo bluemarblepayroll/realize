@@ -1,6 +1,6 @@
 # Realize
 
-[![Gem Version](https://badge.fury.io/rb/realize.svg)](https://badge.fury.io/rb/realize) [![Build Status](https://travis-ci.org/bluemarblepayroll/realize.svg?branch=master)](https://travis-ci.org/bluemarblepayroll/realize) [![Maintainability](https://api.codeclimate.com/v1/badges/115f0c5a1d0a4cce7230/maintainability)](https://codeclimate.com/github/bluemarblepayroll/realize/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/115f0c5a1d0a4cce7230/test_coverage)](https://codeclimate.com/github/bluemarblepayroll/realize/test_coverage) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Gem Version](https://badge.fury.io/rb/realize.svg)](https://badge.fury.io/rb/realize) [![Build Status](https://travis-ci.com/bluemarblepayroll/realize.svg?branch=master)](https://travis-ci.com/bluemarblepayroll/realize) [![Maintainability](https://api.codeclimate.com/v1/badges/115f0c5a1d0a4cce7230/maintainability)](https://codeclimate.com/github/bluemarblepayroll/realize/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/115f0c5a1d0a4cce7230/test_coverage)](https://codeclimate.com/github/bluemarblepayroll/realize/test_coverage) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This library provides a pluggable and configurable data transformation framework.  The general use-case is:
 
@@ -79,6 +79,7 @@ Here is a list of each built-in transformer, their options, and what their funct
 * **r/format/date** [input_format, output_format]: Parses the incoming value into a Time object using the configured input_format and outputs it as formatted by the configured output_format.
 * **r/format/lowercase** []: Calls `#to_s.downcase` on the value so the returned value is guaranteed to be a lower-cased string.
 * **r/format/remove_whitespace** []: Removes all whitespace from the incoming value.
+* **r/format/sha256** [encoding_format]: Convert the value into a SHA256 encoded string.  The encoding_format will be hex by default but can also be configured to use base64.
 * **r/format/string_replace** [original, replacement]: Replaces all occurrences of the configured original value with the replacement value.
 * **r/format/string_template** [expression, separator, use_record]: String interpolate an expression using either the record or passed in value.  Nested objects can be handled (i.e. key paths like dot-notation) by passing in a separator.
 * **r/format/substring** [start_index, end_index, exclusive]: Cut a string in a given range.  All options are optional.  If a start_index is not provided, the beginning of the string is used.  If no end_index is specified then the end of the string is used.  If exclusive is set to true then the last index position will not be included.  For example: "hellofriend" with a start_index of 0, an end_index of 5, and exclusive as true would yield: "hello".  If exclusive was false then it would yield "hellof"
