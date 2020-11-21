@@ -30,6 +30,7 @@ require_relative 'format/uppercase'
 
 require_relative 'logical/switch'
 
+require_relative 'type/array'
 require_relative 'type/boolean'
 require_relative 'type/string'
 
@@ -73,6 +74,7 @@ module Realize
 
     register 'r/logical/switch',               Logical::Switch
 
+    register 'r/type/array',                   Type::Array
     register 'r/type/boolean',                 Type::Boolean
     register 'r/type/string',                  Type::String
 

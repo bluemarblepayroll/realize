@@ -93,6 +93,7 @@ Here is a list of each built-in transformer, their options, and what their funct
 
 #### Type Transformers
 
+* **r/type/array** [nullable]: Ensure the value is an array by calling Kernel#Array on the value.
 * **r/type/boolean** [nullable]: Returns `true` if the input is 'truthy', `false` if not.  By default nullable is false, which means a nil input will return false.  Changing this to true will return nil if nil is passed in.  A 'truthy' value is defined as matching: true, t, yes, y, or 1 (case-insensitive).
 * **r/type/string** [nullable]: Calls `#to_s` on the value so the returned value is guaranteed to be a string type.
 
