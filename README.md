@@ -67,6 +67,10 @@ Here is a list of each built-in transformer, their options, and what their funct
 * **r/collection/last** []:  Takes an array (or coerces value to an array) and returns the value at the last index position.
 * **r/collection/sort** [key, direction]:  Takes an array (or coerces value to an array) and sort it either ascending or descending by some defined key's value.
 
+#### File-based Transformers
+
+* **r/file/basename** [suffix]: Return the filename and extension.  If suffix is provided then it will be stripped from the end.  If '.*' is passed as the suffix then any extension will be ignored.
+* **r/file/extname** [suffix]: Return the extension for value.
 #### Filtering Transformers
 
 * **r/filter/by_key_record_value** [key, value]: Takes an array (or coerces value to an array) and selects only the records that match the key's value.  In this case the value is derived off of the main record.
