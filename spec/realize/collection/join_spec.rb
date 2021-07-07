@@ -48,6 +48,9 @@ RSpec.describe Realize::Collection::Join do
       it 'when empty array (out of range)' do
         expect(subject.transform(resolver, [], nil, nil)).to eq('')
       end
+      it 'when nil' do
+        expect(subject.transform(resolver, nil, nil, nil)).to eq('')
+      end
     end
   end
 
@@ -70,6 +73,9 @@ RSpec.describe Realize::Collection::Join do
       end
       it 'when empty array (out of range)' do
         expect(subject.transform(resolver, [], nil, nil)).to eq('')
+      end
+      it 'when nil' do
+        expect(subject.transform(resolver, nil, nil, nil)).to eq('')
       end
     end
   end
@@ -94,6 +100,9 @@ RSpec.describe Realize::Collection::Join do
       it 'when empty array' do
         expect(subject.transform(resolver, [], nil, nil)).to eq('')
       end
+      it 'when nil' do
+        expect(subject.transform(resolver, nil, nil, nil)).to eq('')
+      end
     end
   end
 
@@ -116,6 +125,9 @@ RSpec.describe Realize::Collection::Join do
       end
       it 'when empty array' do
         expect(subject.transform(resolver, [], nil, nil)).to eq('')
+      end
+      it 'when nil' do
+        expect(subject.transform(resolver, nil, nil, nil)).to eq('')
       end
     end
   end
