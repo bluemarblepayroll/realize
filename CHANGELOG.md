@@ -1,4 +1,4 @@
-# 1.6.0 (TBD)
+# 1.6.0 (July 7th, 2021)
 
 New Transformers:
 
