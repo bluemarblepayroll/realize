@@ -16,24 +16,24 @@ module Realize
       include Arrays
       acts_as_hashable
 
-      DEFAULT_END_INDEX = -1
-      DEFAULT_SEPARATOR = ' '
-      DEFAULT_START_INDEX = 0
+      DEFAULT_END_INDEX     = -1
+      DEFAULT_SEPARATOR     = ''
+      DEFAULT_START_INDEX   = 0
 
       attr_reader :separator, :end_index, :start_index
 
       def initialize(separator: DEFAULT_SEPARATOR, start_index: DEFAULT_START_INDEX,
                      end_index: DEFAULT_END_INDEX)
-        @separator = separator || DEFAULT_SEPARATOR
-        @start_index = start_index || DEFAULT_START_INDEX
-        @end_index = end_index || DEFAULT_END_INDEX
+        @separator    = separator || DEFAULT_SEPARATOR
+        @start_index  = start_index || DEFAULT_START_INDEX
+        @end_index    = end_index || DEFAULT_END_INDEX
 
         freeze
       end
 
       def transform(_resolver, value, _time, _record)
         items = array(value)
-        
+
         (items[start_index..end_index] || []).join(separator)
       end
     end

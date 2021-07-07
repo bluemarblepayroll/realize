@@ -36,10 +36,10 @@ RSpec.describe Realize::Collection::Join do
         expect(subject.transform(resolver, first_array, nil, nil)).to eq('Bonus')
       end
       it 'when three elements, two words' do
-        expect(subject.transform(resolver, second_array, nil, nil)).to eq('Holiday Pay')
+        expect(subject.transform(resolver, second_array, nil, nil)).to eq('HolidayPay')
       end
       it 'when four elements, three words' do
-        expect(subject.transform(resolver, third_array, nil, nil)).to eq('Holiday Pay Bonus')
+        expect(subject.transform(resolver, third_array, nil, nil)).to eq('HolidayPayBonus')
       end
       it 'when value is not an array' do
         expect(subject.transform(resolver, not_an_array, nil, nil))
@@ -85,13 +85,13 @@ RSpec.describe Realize::Collection::Join do
 
     context 'join' do
       it 'when two elements, two words' do
-        expect(subject.transform(resolver, first_array, nil, nil)).to eq('111 Bonus')
+        expect(subject.transform(resolver, first_array, nil, nil)).to eq('111Bonus')
       end
       it 'when three elements, three words' do
-        expect(subject.transform(resolver, second_array, nil, nil)).to eq('222 Holiday Pay')
+        expect(subject.transform(resolver, second_array, nil, nil)).to eq('222HolidayPay')
       end
       it 'when four elements, four words' do
-        expect(subject.transform(resolver, third_array, nil, nil)).to eq('333 Holiday Pay Bonus')
+        expect(subject.transform(resolver, third_array, nil, nil)).to eq('333HolidayPayBonus')
       end
       it 'when value is not an array' do
         expect(subject.transform(resolver, not_an_array, nil, nil))
@@ -107,17 +107,17 @@ RSpec.describe Realize::Collection::Join do
   end
 
   describe '#transform comma separator' do
-    subject { described_class.new(separator: ',') }
+    subject { described_class.new(separator: ' ') }
 
     context 'join' do
       it 'when two elements, two words' do
-        expect(subject.transform(resolver, first_array, nil, nil)).to eq('111,Bonus')
+        expect(subject.transform(resolver, first_array, nil, nil)).to eq('111 Bonus')
       end
       it 'when three elements, three words' do
-        expect(subject.transform(resolver, second_array, nil, nil)).to eq('222,Holiday,Pay')
+        expect(subject.transform(resolver, second_array, nil, nil)).to eq('222 Holiday Pay')
       end
       it 'when four elements, four words' do
-        expect(subject.transform(resolver, third_array, nil, nil)).to eq('333,Holiday,Pay,Bonus')
+        expect(subject.transform(resolver, third_array, nil, nil)).to eq('333 Holiday Pay Bonus')
       end
       it 'when value is not an array' do
         expect(subject.transform(resolver, not_an_array, nil, nil))
